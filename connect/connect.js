@@ -216,7 +216,7 @@ function ConnectAnimation(canvas_id)
     this.bounce = function(i)
     {
         this.points[i].xv = 0-this.points[i].xv;
-        this.points[i].yx = 0-this.points[i].yv;
+        this.points[i].yv = 0-this.points[i].yv;
     }
 
     this.poll = function()
