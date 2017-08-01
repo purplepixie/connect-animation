@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Connect Animation</title>
+
+        <link rel="stylesheet" type="text/css" href="connect/connect-basic.css">
+        <script src="connect/connect.js"></script>
+
+        <style type="text/css">
+            #title
+            {
+                font-family: Verdana, sans-serif;
+                z-index: 100;
+                position: absolute;
+                top: 40%;
+                text-align: center;
+                width: 100%;
+            }
+
+            #title a:visited
+            {
+                color: blue;
+            }
+
+            #title a:hover
+            {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="contents">
+            <div id="title">
+                <h1>Connector Animation (HTML 5 Canvas)</h1>
+                by <a href="http://www.purplepixie.org/">Purplepixie Systems</a><br />
+                <a href="https://github.com/purplepixie/connect-animation">github.com/purplepixie/connect-animation</a>
+            </div>
+            <canvas id="connection"></canvas>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        var anim = new ConnectAnimation('connection');
+        anim.autoscale=true;
+        anim.setup();
+
+        anim.start();
+    </script>
+
+</html>
