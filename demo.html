@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Connect Animation Demo</title>
+
+        <link rel="stylesheet" type="text/css" href="connect/connect-basic.css">
+        <script src="connect/connect.js"></script>
+
+        <style type="text/css">
+            body
+            {
+                font-family: Verdana, sans-serif;
+                margin: 0.2em;
+            }
+
+            div.title
+            {
+                font-size: 200%;
+                font-weight: bold;
+            }
+
+            div.footer
+            {
+                margin-top: 2em;
+            }
+
+            div.animation
+            {
+                margin-top: 1em;
+            }
+
+            div.animation-panel
+            {
+                width: 100%;
+                height: 200px;
+                margin-top: 1em
+            }
+
+            canvas.animation-canvas
+            {
+                width: 100%;
+                height: 100%;
+                border: solid 1px black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="title">Connect Animation Demo (Various)</div>
+
+        <div class="animation">
+            <div class="animation-title">
+                White background - rainbow effect
+            </div>
+            <div class="animation-panel">
+                <canvas id="anim1" class="animation-canvas"></canvas>
+            </div>
+        </div>
+
+        <div class="animation">
+            <div class="animation-title">
+                Black background - no collision, no rainbow
+            </div>
+            <div class="animation-panel">
+                <canvas id="anim2" class="animation-canvas"></canvas>
+            </div>
+        </div>
+
+        <div class="animation">
+            <div class="animation-title">
+                White background - no collision, no rainbow, no lightning, blue colours, longer links
+            </div>
+            <div class="animation-panel">
+                <canvas id="anim3" class="animation-canvas"></canvas>
+            </div>
+        </div>
+
+        <div class="footer">
+            Connect Animation by <a href="http://www.purplepixie.org/">Purplepixie</a> - on git hub at <a href="https://github.com/purplepixie/connect-animation/">github.com/connect-animation</a>.
+    </body>
+
+    <script type="text/javascript">
+        var anim1 = new ConnectAnimation('anim1');
+        anim1.xsize = document.getElementById('anim1').parentElement.clientWidth;
+        anim1.ysize = document.getElementById('anim1').parentElement.clientHeight;
+        anim1.numPoints = 10;
+        anim1.xspeedmax=8;
+        anim1.yspeedmax=8;
+        anim1.setup();
+        anim1.start();
+
+        var anim2 = new ConnectAnimation('anim2');
+        anim2.xsize = document.getElementById('anim2').parentElement.clientWidth;
+        anim2.ysize = document.getElementById('anim2').parentElement.clientHeight;
+        anim2.numPoints = 10;
+        anim2.xspeedmax=8;
+        anim2.yspeedmax=8;
+        anim2.collision = false;
+        anim2.bgColor = 'black';
+        anim2.rainbow = false;
+        anim2.setup();
+        anim2.start();
+
+        var anim3 = new ConnectAnimation('anim3');
+        anim3.xsize = document.getElementById('anim3').parentElement.clientWidth;
+        anim3.ysize = document.getElementById('anim3').parentElement.clientHeight;
+        anim3.numPoints = 10;
+        anim3.xspeedmax=8;
+        anim3.yspeedmax=8;
+        anim3.collision = false;
+        anim3.rainbow = false;
+        anim3.linkmax=100;
+        anim3.linksolid=150;
+        anim3.fgColor = '#c0c0ff';
+        anim3.fgLinkColor = '#d0d0ff';
+        anim3.setup();
+        anim3.start();
+    </script>
+
+</html>
